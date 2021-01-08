@@ -1,0 +1,26 @@
+
+
+<ion-grid>
+  <br><br><br><br>
+  <img src="assets/logo_dash.svg">
+  <br><br><br><br>
+  <form [formGroup]="ionicForm" (ngSubmit)="submitForm()" novalidate>
+
+  
+
+    <ion-item lines="none">
+      <ion-label>UserName:</ion-label>
+      <ion-input placeholder="user@email.com" type="text"  formControlName="user"></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>Password:</ion-label>
+      <ion-input type="Password"placeholder="xxxxxx"  formControlName="pass"></ion-input>
+    </ion-item>
+      <br><br>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="primary" expand="block">Submit</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-grid>

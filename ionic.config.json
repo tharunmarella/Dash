@@ -1,7 +1,15 @@
 {
   "name": "Dash",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {
+      "enabled": false
+    },
+    "cordova": {}
   },
-  "type": "angular"
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://54.164.171.220:8080"
+    }
+  ]
 }

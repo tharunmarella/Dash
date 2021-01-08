@@ -1,17 +1,124 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+
+  <ion-slides pager="true" [options]="slideOpts" #slides>
+    <ion-slide>
+      <ion-grid>
+        <ion-row>
+          <ion-col >
+            <h1>Select Categories</h1>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+     
+
+            <ion-list >
+              <ion-item lines="none" *ngFor="let item of cat" ><ion-label>{{ item }}</ion-label>
+                <ion-checkbox slot="start"></ion-checkbox></ion-item>
+          </ion-list>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col >
+            <ion-searchbar type="text" debounce="500" (ionChange)="getItems($event)"></ion-searchbar>
+            <ion-list *ngIf="isItemAvailable">
+              <ion-item  *ngFor="let item of items" (click)="add(item)" >{{ item }}</ion-item>
+          </ion-list>
+          </ion-col>
+        </ion-row>
+        <ion-button color="primary" fill="clear" (click)="next(slides)">Next</ion-button>
+      </ion-grid>
+     
+    </ion-slide>
+
+    <ion-slide>
+      <ion-grid>
+      <ion-row>
+        <ion-col >
+          <h1>How Can We Help</h1>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col >
+          <ion-textarea placeholder="Type your text here"></ion-textarea>
+        </ion-col>
+      </ion-row>
+      <ion-button color="primary" fill="clear" (click)="next(slides)">Next</ion-button>
+    </ion-grid>
+    
+    </ion-slide>
+    <ion-slide>
+      <ion-grid>
+        <ion-row>
+          <ion-col >
+            <h1>Deliverables</h1>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col >
+            <ion-list>
+              <ion-item lines="none" >
+                <ion-label>New Product Develoupment</ion-label>
+                <ion-checkbox slot="start"></ion-checkbox>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-label>Testing</ion-label>
+                <ion-checkbox slot="start"></ion-checkbox>
+              </ion-item>
+              <ion-item lines="none" >
+                <ion-label>Research</ion-label>
+                <ion-checkbox slot="start"></ion-checkbox>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-label>Others</ion-label>
+                <ion-checkbox slot="start"></ion-checkbox>
+              </ion-item>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+        <ion-button color="primary" fill="clear" (click)="next(slides)">Next</ion-button>
+      </ion-grid>
+
+    </ion-slide>
+
+    <ion-slide>
+      <ion-grid>
+      <ion-row>
+        <ion-col >
+          <h1>Personal Data</h1>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col >
+          <ion-item>
+            <ion-label position="stacked">FirstName</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">LastName</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Contact</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Email</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-button color="primary" fill="clear">Submit</ion-button>
+    </ion-grid>
+    
+    </ion-slide>
+  </ion-slides>
+
+
+
+
+
+  
 </ion-content>
