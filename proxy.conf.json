@@ -1,8 +1,0 @@
-{
-    "/v1": {
-      "target": "http://54.164.171.220:8080/api/",
-      "changeOrigin": true,
-      "secure": true,
-      "logLevel": "debug"
-    }
-  }

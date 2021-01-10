@@ -6,10 +6,12 @@
     },
     "cordova": {}
   },
+
   "proxies": [
     {
       "path": "/api",
-      "proxyUrl": "http://54.164.171.220:8080"
+      "proxyUrl": "http://54.164.171.220:8080/api"
     }
   ]
+  
 }
