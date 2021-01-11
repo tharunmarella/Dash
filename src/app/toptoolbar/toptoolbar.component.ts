@@ -3,14 +3,13 @@ import { PopoverController } from '@ionic/angular';
 import { PopoverComponent } from './popover/popover.component';
 
 @Component({
-  selector: 'toolbar',
-  templateUrl: './toolbar.page.html',
-  styleUrls: ['./toolbar.page.scss'],
+  selector: 'app-toptoolbar',
+  templateUrl: './toptoolbar.component.html',
+  styleUrls: ['./toptoolbar.component.scss'],
 })
-export class ToolbarPage implements OnInit {
+export class ToptoolbarComponent implements OnInit {
 
-  constructor(public popoverController: PopoverController) {
-  }
+  constructor(public popoverController: PopoverController) { }
 
   async presentPopover(ev: any) {
     const popover = await this.popoverController.create({
@@ -22,7 +21,6 @@ export class ToolbarPage implements OnInit {
     return await popover.present();
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }

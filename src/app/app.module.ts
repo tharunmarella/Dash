@@ -8,7 +8,6 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import{ToolbarPageModule}from './toolbar/toolbar.module';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -19,7 +18,7 @@ import { HttpConfigInterceptor } from './httpConfig.interceptor';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,ToolbarPageModule,
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
   FormsModule,ReactiveFormsModule,HttpClientModule,IonicStorageModule.forRoot()
   ],
   providers: [

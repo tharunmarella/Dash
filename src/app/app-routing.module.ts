@@ -14,10 +14,7 @@ const routes: Routes = [
     path : '',
     redirectTo : 'login',
     pathMatch : 'full'   },
-  {
-    path: 'toolbar',
-    loadChildren: () => import('./toolbar/toolbar.module').then( m => m.ToolbarPageModule)
-  },
+
   {
     path: 'view',
     loadChildren: () => import('./view/view.module').then( m => m.ViewPageModule)
